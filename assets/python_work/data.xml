@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<!--  Data Collected from ns2 simulator  -->
+
+<Data>
+  <Protocol>
+    <TCP>
+      <Node count="2">
+	
+	
+	<Throughput unit="kbps">
+	  <packet unit="bytes" size="10">234.00</packet>
+	  <packet unit="bytes" size="100">460.99</packet>
+	  <packet unit="bytes" size="500">990.93</packet>
+	  <packet unit="bytes" size="1024">1282.73</packet>
+	</Throughput>
+	
+	
+	
+	<AverageDelay unit="s">
+	  <packet unit="bytes" size="10">0.059223</packet>
+	  <packet unit="bytes" size="100">0.071680</packet>
+	  <packet unit="bytes" size="500">0.123772</packet>
+	  <packet unit="bytes" size="1024">0.183396 </packet>
+	  
+	  </AverageDelay>
+	  
+	  
+	  <DropRatio>
+	    <packet unit="bytes" size="10">0.007653</packet>
+	    <packet unit="bytes" size="100">0.007416</packet>
+	    <packet unit="bytes" size="500">0.006337</packet>
+	    <packet unit="bytes" size="1024"> 0.006052 </packet>
+	    
+	    
+	    </DropRatio>
+	    
+	    
+	    </Node>	
+	  </TCP>
+	  
+	  <UDP>
+	    <Node count="2">	
+	      <Throughput unit="kbps">
+		<packet unit="bytes" size="10">234.55</packet>
+		<packet unit="bytes" size="100">572.29</packet>
+		<packet unit="bytes" size="500">896.36</packet>
+		<packet unit="bytes" size="1024">896.84 </packet>
+	      </Throughput>
+	      
+	      <AverageDelay unit="s">
+		<packet unit="bytes" size="10">100.007</packet>
+		<packet unit="bytes" size="100">135.225</packet>
+		<packet unit="bytes" size="500">4.34491</packet>
+		<packet unit="bytes" size="1024">7.43446 </packet>
+		
+		</AverageDelay>
+		
+		<DropRatio>
+		  
+		  <packet unit="bytes" size="10">0.9116</packet>
+		  <packet unit="bytes" size="100">0.3506</packet>
+		  <packet unit="bytes" size="500">0.0</packet>
+		  <packet unit="bytes" size="1024">0.0 </packet>
+		</DropRatio>
+		
+		</Node>	
+	      </UDP>
+	      
+	      <SCTP>
+		<Node count="2">
+		  
+		  
+		  <Throughput unit="kbps">
+		    <packet unit="bytes" size="10"></packet>
+		    <packet unit="bytes" size="100">6.625</packet>
+		    <packet unit="bytes" size="500">17.125</packet>
+		    <packet unit="bytes" size="1024">21.875 </packet>
+		    
+		    </Throughput>
+		    
+		    <AverageDelay unit="s">
+		      <packet unit="bytes" size="10"></packet>
+		      <packet unit="bytes" size="100">63.27</packet>
+		      <packet unit="bytes" size="500">108.88</packet>
+		      <packet unit="bytes" size="1024">108.88 </packet>
+		      
+		      </AverageDelay>
+		      
+		      <DropRatio>
+			<packet unit="bytes" size="10"></packet>
+			<packet unit="bytes" size="100">1.89</packet>
+			<packet unit="bytes" size="500">2.66</packet>
+			<packet unit="bytes" size="1024">2.62 </packet>
+			
+			
+			</DropRatio>
+			
+			
+			
+			</Node>	
+		      </SCTP>
+		      
+		      <DCCP>
+			<Node count="2">
+			  
+			  
+			  <Throughput unit="kbps">
+			    <packet unit="bytes" size="10">429.2</packet>
+			    <packet unit="bytes" size="100">696.32</packet>
+			    <packet unit="bytes" size="500">1238.72</packet>
+			    <packet unit="bytes" size="1024">1496.24 </packet>
+			  </Throughput>
+			  
+			  <AverageDelay unit="ms">
+			    <packet unit="bytes" size="10">51.73</packet>
+			    <packet unit="bytes" size="100">67.06</packet>
+			    <packet unit="bytes" size="500">76.5</packet>
+			    <packet unit="bytes" size="1024">180.09 </packet>
+			  </AverageDelay>
+			  
+			  
+			  <DropRatio>
+			    <packet unit="bytes" size="10">0.0039</packet>
+			    <packet unit="bytes" size="100">0.0047</packet>
+			    <packet unit="bytes" size="500">0.0037</packet>
+			    <packet unit="bytes" size="1024">0.004 </packet>
+			  </DropRatio>
+			  
+			  
+			  </Node>	
+			</DCCP>
+		      </Protocol>
+		    </Data>
