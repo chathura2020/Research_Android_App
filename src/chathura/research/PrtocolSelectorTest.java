@@ -87,7 +87,7 @@ public class PrtocolSelectorTest extends ActionBarActivity {
 							boolean isChecked) {
 						// TODO Auto-generated method stub
 						if (isChecked) {
-							feature_list = feature_list | RELIABLE;
+							feature_list = feature_list + RELIABLE;
 						} else
 							feature_list = feature_list - RELIABLE;
 
@@ -102,7 +102,7 @@ public class PrtocolSelectorTest extends ActionBarActivity {
 							boolean isChecked) {
 						// TODO Auto-generated method stub
 						if (isChecked) {
-							feature_list = feature_list | UNRELIABLE;
+							feature_list = feature_list + UNRELIABLE;
 						} else
 							feature_list = feature_list - UNRELIABLE;
 
@@ -117,13 +117,58 @@ public class PrtocolSelectorTest extends ActionBarActivity {
 							boolean isChecked) {
 						// TODO Auto-generated method stub
 						if (isChecked) {
-							feature_list = feature_list | LARGE_DATA;
+							feature_list = feature_list + LARGE_DATA;
 						} else
 							feature_list = feature_list - LARGE_DATA;
 
 					}
 				});
+		
+		rdbtnMedium
+		.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView,
+					boolean isChecked) {
+				// TODO Auto-generated method stub
+				if (isChecked) {
+					feature_list = feature_list + MEDIUM_DATA;
+				} else
+					feature_list = feature_list - MEDIUM_DATA;
+
+			}
+		});
+
+		rdbtnSmall
+		.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView,
+					boolean isChecked) {
+				// TODO Auto-generated method stub
+				if (isChecked) {
+					feature_list = feature_list + SMALL_DATA;
+				} else
+					feature_list = feature_list - SMALL_DATA;
+
+			}
+		});
+		
+		rdbtnVerySmall
+		.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView,
+					boolean isChecked) {
+				// TODO Auto-generated method stub
+				if (isChecked) {
+					feature_list = feature_list + VERY_SMALL_DATA;
+				} else
+					feature_list = feature_list - VERY_SMALL_DATA;
+
+			}
+		});
+		
 		btnSelectProtocol.setOnClickListener(new View.OnClickListener() {
 
 			@Override
