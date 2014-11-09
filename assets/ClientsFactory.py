@@ -27,17 +27,21 @@ class TCPClient(object):
   
   def __init__(self,ip,port):
     # Create a TCP/IP socket
+    print " Create a TCP/IP socket"
+    
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     
     self.ip_address=ip
     self.port=port
     
     # Connect the socket to the port where the server is listening
+    print "Connect the socket to the port where the server is listening"
     server_address = (self.ip_address,self.port)
-    
+
+    print "Connecting To Server"
     sock.connect(server_address)
     self.tcp_server_socket=sock
-    
+    print "Connected To Server"
   
   def send_data(self,data):
     try:
@@ -104,7 +108,7 @@ def main(protocol,datasize):
 
   networkFactory=NetworkClientFactory()
   
-  socket=networkFactory.get_client(protocol,127.0.0.1,5500)
+  socket=NetworkClientFactory.get_client(protocol,'10.0.2.2',5500)
   socket.send_data("This is a sample data")
   
 
