@@ -19,6 +19,21 @@ import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
 	TextView txt;
+	
+	final int NONE = 0;
+	final int RELIABLE = 1;
+	final int UNRELIABLE = 2;
+	final int HIGH_FREQUENCY = 4;
+	final int LOW_FREQUENCY = 8;
+	final int LARGE_DATA = 16;
+	final int MEDIUM_DATA = 32;
+	final int SMALL_DATA = 64;
+	final int VERY_SMALL_DATA = 128;
+	final int HIGH_PRIORITY = 256;
+	final int LOW_PRIORITY = 512;
+	
+	int feature_list=0;
+	
 	public static final String TAG = MainActivity.class.getSimpleName();
 	
 	@Override
@@ -49,7 +64,10 @@ public class MainActivity extends ActionBarActivity {
 	     Service._DoFile("python", "/data/data/"+getPackageName()+"/files/ProtocolSelector.py", "");
 	     
 	     StarObjectClass python = Service._ImportRawContext("python","",true,"");
-	     String result = (String) python._Call("main");	     
+	    
+	     feature_list=this.RELIABLE|this.LARGE_DATA;
+	     
+	     String result = (String) python._Call("main",feature_list);	     
 	     txt.setText("Output : "+ result);
 
 	     

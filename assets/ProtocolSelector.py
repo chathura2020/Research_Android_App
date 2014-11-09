@@ -172,9 +172,9 @@ class ProtocolData:
       return self.dropRatio[protocol][packetSize];
 
     
-def main():
+def main(feature_list):
 	p=ProtocolSelector()
-	p.setTransportFeatures(p.RELIABLE|p.SMALL_DATA)
+	p.setTransportFeatures(feature_list)
 	selected_protocol=p.selectProtocol()
         #d=p.Add(10,30)
         return selected_protocol
