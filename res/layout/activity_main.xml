@@ -5,7 +5,7 @@
     tools:context="chathura.research.MainActivity" 
     android:orientation="vertical">
 
-    <TextView
+  <!--   <TextView
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:text="Result :" 
@@ -15,5 +15,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Click"
-        android:onClick="click"/>
+        android:onClick="click"/> -->
+
+    <Button
+        android:id="@+id/buttonAPISelection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Protocol Selection" />
+
+    <Button
+        android:id="@+id/buttonClient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Clients" />
+
+    <Button
+        android:id="@+id/buttonServers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Servers" />
+
 </LinearLayout>

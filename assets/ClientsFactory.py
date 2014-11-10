@@ -88,19 +88,19 @@ class UDPClient(object):
       # Send data
       message = data
       print >>sys.stderr, 'sending "%s"' % message
-      self.tcp_server_socket.sendall(message)
+      self.udp_server_socket.sendall(message)
 
       amount_received = 0
       amount_expected = len(message)
     
       while amount_received < amount_expected:
-        data = self.tcp_server_socket.recv(16)
+        data = self.udp_server_socket.recv(60)
         amount_received += len(data)
         print >>sys.stderr, 'received "%s"' % data
 
     finally:
       print >>sys.stderr, 'closing socket'
-      self.tcp_server_socket.close()
+      self.udp_server_socket.close()
 
 #------------------------------------------------------------------------------
 
@@ -108,7 +108,7 @@ def main(protocol,datasize):
 
   networkFactory=NetworkClientFactory()
   
-  socket=NetworkClientFactory.get_client(protocol,'10.0.2.2',5500)
+  socket=NetworkClientFactory.get_client(protocol,'192.168.137.5',20000)
   socket.send_data("This is a sample data")
   
 

@@ -6,5 +6,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_prtocol_selector_test">PrtocolSelectorTest</string>
     <string name="title_activity_client_side">ClientSide</string>
+    <string name="title_activity_server_side">ServerSide</string>
 
 </resources>

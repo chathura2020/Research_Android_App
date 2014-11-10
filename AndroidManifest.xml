@@ -6,10 +6,11 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-	<uses-permission android:name="android.permission.INTERNET" />
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     
-    
+
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="19" />
@@ -22,22 +23,23 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name=".PrtocolSelectorTest"
-            android:label="@string/title_activity_prtocol_selector_test" >
-          
-        </activity>
-        <activity
-            android:name=".ClientSide"
-            android:label="@string/title_activity_client_side" >
-            
-              <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            
+        </activity>
+        <activity
+            android:name=".PrtocolSelectorTest"
+            android:label="@string/title_activity_prtocol_selector_test" >
+        </activity>
+        <activity
+            android:name=".ClientSide"
+            android:label="@string/title_activity_client_side" >
+        </activity>
+        <activity
+            android:name=".ServerSide"
+            android:label="@string/title_activity_server_side" >
         </activity>
     </application>
 
