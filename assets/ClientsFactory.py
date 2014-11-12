@@ -104,11 +104,11 @@ class UDPClient(object):
 
 #------------------------------------------------------------------------------
 
-def main(protocol,datasize):
+def main(protocol,ipaddress,datasize):
 
   networkFactory=NetworkClientFactory()
   
-  socket=NetworkClientFactory.get_client(protocol,'192.168.137.5',20000)
+  socket=NetworkClientFactory.get_client(protocol,ipaddress,20001)
   socket.send_data("This is a sample data")
   
 

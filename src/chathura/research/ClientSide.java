@@ -78,7 +78,7 @@ public class ClientSide extends Activity {
 				} catch (Exception e) {
 					Log.e("Error", e.getMessage());
 				}
-				String result = (String) python._Call("main","UDP","Large");
+				String result = (String) python._Call("main","UDP",serverIP,"Large");
 
 			//	tvResult.setText("Selected Prtocol is " + result);
 				// SrvGroup._ClearService();

@@ -29,12 +29,22 @@
           android:text="TCP Server" />
 
       <TextView
+          android:id="@+id/textViewServerIpAddress"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignLeft="@+id/buttonTCPServer"
+          android:layout_below="@+id/buttonTCPServer"
+          android:layout_marginTop="16dp"
+          android:text="Medium Text"
+          android:textAppearance="?android:attr/textAppearanceMedium" />
+
+      <TextView
           android:id="@+id/textViewLog"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_alignParentLeft="true"
-          android:layout_below="@+id/buttonTCPServer"
-          android:layout_marginTop="33dp"
+          android:layout_alignLeft="@+id/textViewServerIpAddress"
+          android:layout_below="@+id/textViewServerIpAddress"
+          android:layout_marginTop="18dp"
           android:text="Log :"
           android:textAppearance="?android:attr/textAppearanceMedium" />
     
