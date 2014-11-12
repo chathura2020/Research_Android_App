@@ -49,6 +49,8 @@ def getConnection(ipAddress,port) :
         sent = sock.sendto(data, address)
         print >>sys.stderr, 'sent %s bytes back to %s' % (sent, address)
         x=x+'\nsent %s bytes back to %s' % (sent, address)
+	
+	sock.close()	
 
     return x
     
