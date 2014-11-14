@@ -32,13 +32,32 @@
         <requestFocus />
     </EditText>
 
-    <Button
-        android:id="@+id/buttonConnectToServer"
+      <Button
+        android:id="@+id/buttonSendToTCPServer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editTextServerIP"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="26dp"
-        android:text="Connect To Server" />
+        android:text="Send to TCP Server" />
+
+      <Button
+          android:id="@+id/buttonSendToUDPServer"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignLeft="@+id/buttonSendToTCPServer"
+          android:layout_below="@+id/buttonSendToTCPServer"
+          android:layout_marginTop="15dp"
+          android:text="Send to UDP Server" />
+      
+      
+      <Button
+          android:id="@+id/buttonSendToDCCPServer"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignLeft="@+id/buttonSendToUDPServer"
+          android:layout_below="@+id/buttonSendToUDPServer"
+          android:layout_marginTop="15dp"
+          android:text="Send to DCCP Server" />
 
 </RelativeLayout>

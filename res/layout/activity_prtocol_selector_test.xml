@@ -164,11 +164,16 @@
             
 
             <RadioButton
-                android:id="@+id/radioButtonLowFreq"
+                android:id="@+id/radioButtonTriggredFreq"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Low Freq" />
-
+                android:text="Triggered Freq" />
+			
+            <RadioButton
+                android:id="@+id/radioButtonUrgentFreq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Urgent Freq" />
   	
            
         </RadioGroup>

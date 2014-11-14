@@ -12,17 +12,17 @@
 	<Throughput unit="kbps">
 	  <packet unit="bytes" size="10">234.00</packet>
 	  <packet unit="bytes" size="100">460.99</packet>
-	  <packet unit="bytes" size="500">990.93</packet>
+	  <packet unit="bytes" size="500">890.93</packet>
 	  <packet unit="bytes" size="1024">1282.73</packet>
 	</Throughput>
 	
 	
 	
-	<AverageDelay unit="s">
-	  <packet unit="bytes" size="10">0.059223</packet>
-	  <packet unit="bytes" size="100">0.071680</packet>
-	  <packet unit="bytes" size="500">0.123772</packet>
-	  <packet unit="bytes" size="1024">0.183396 </packet>
+	<AverageDelay unit="ms">
+	  <packet unit="bytes" size="10">5.9223</packet>
+	  <packet unit="bytes" size="100">10.6680</packet>
+	  <packet unit="bytes" size="500">15.3772</packet>
+	  <packet unit="bytes" size="1024">18.3396 </packet>
 	  
 	  </AverageDelay>
 	  
@@ -43,17 +43,17 @@
 	  <UDP>
 	    <Node count="2">	
 	      <Throughput unit="kbps">
-		<packet unit="bytes" size="10">234.55</packet>
-		<packet unit="bytes" size="100">572.29</packet>
+		<packet unit="bytes" size="10">350.55</packet>
+		<packet unit="bytes" size="100">690.29</packet>
 		<packet unit="bytes" size="500">896.36</packet>
-		<packet unit="bytes" size="1024">896.84 </packet>
+		<packet unit="bytes" size="1024">1200.84 </packet>
 	      </Throughput>
 	      
-	      <AverageDelay unit="s">
-		<packet unit="bytes" size="10">100.007</packet>
-		<packet unit="bytes" size="100">135.225</packet>
-		<packet unit="bytes" size="500">4.34491</packet>
-		<packet unit="bytes" size="1024">7.43446 </packet>
+	      <AverageDelay unit="ms">
+		<packet unit="bytes" size="10">20.007</packet>
+		<packet unit="bytes" size="100">35.225</packet>
+		<packet unit="bytes" size="500">90.34491</packet>
+		<packet unit="bytes" size="1024">220.43446</packet>
 		
 		</AverageDelay>
 		
@@ -73,18 +73,18 @@
 		  
 		  
 		  <Throughput unit="kbps">
-		    <packet unit="bytes" size="10"></packet>
-		    <packet unit="bytes" size="100">6.625</packet>
-		    <packet unit="bytes" size="500">17.125</packet>
-		    <packet unit="bytes" size="1024">21.875 </packet>
+		    <packet unit="bytes" size="10">185.52</packet>
+		    <packet unit="bytes" size="100">557.25</packet>
+		    <packet unit="bytes" size="500">992.55</packet>
+		    <packet unit="bytes" size="1024">1154.358 </packet>
 		    
 		    </Throughput>
 		    
-		    <AverageDelay unit="s">
-		      <packet unit="bytes" size="10"></packet>
-		      <packet unit="bytes" size="100">63.27</packet>
-		      <packet unit="bytes" size="500">108.88</packet>
-		      <packet unit="bytes" size="1024">108.88 </packet>
+		    <AverageDelay unit="ms">
+		      <packet unit="bytes" size="10">7.9653</packet>
+		      <packet unit="bytes" size="100">10.27</packet>
+		      <packet unit="bytes" size="500">14.88</packet>
+		      <packet unit="bytes" size="1024">22.88 </packet>
 		      
 		      </AverageDelay>
 		      
@@ -107,8 +107,8 @@
 			  
 			  
 			  <Throughput unit="kbps">
-			    <packet unit="bytes" size="10">429.2</packet>
-			    <packet unit="bytes" size="100">696.32</packet>
+			    <packet unit="bytes" size="10">290.25</packet>
+			    <packet unit="bytes" size="100">572.32</packet>
 			    <packet unit="bytes" size="500">1238.72</packet>
 			    <packet unit="bytes" size="1024">1496.24 </packet>
 			  </Throughput>
@@ -117,7 +117,7 @@
 			    <packet unit="bytes" size="10">51.73</packet>
 			    <packet unit="bytes" size="100">67.06</packet>
 			    <packet unit="bytes" size="500">76.5</packet>
-			    <packet unit="bytes" size="1024">180.09 </packet>
+			    <packet unit="bytes" size="1024">180.09</packet>
 			  </AverageDelay>
 			  
 			  

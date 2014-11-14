@@ -21,73 +21,65 @@ import android.widget.EditText;
 public class ClientSide extends Activity {
 
 	EditText etServerIP;
-	Button btnConnectToServer;
-	
-	StarObjectClass python = null;
-	StarSrvGroupClass SrvGroup = null;
-	StarServiceClass Service = null;
-	StarCoreFactory starcore = null;
-	
-	String serverIP="0.0.0.0";
-	
+	Button btnSendToUDP, btnSendToTCP, btnSendToDCCP;
+
+	String serverIP = "0.0.0.0";
+
+	DataSender dataSender;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_client_side);
+
+		dataSender = new DataSender();
+		dataSender.LoadClients(this);
+
+		etServerIP = (EditText) findViewById(R.id.editTextServerIP);
+		btnSendToUDP = (Button) findViewById(R.id.buttonSendToUDPServer);
+		btnSendToTCP = (Button) findViewById(R.id.buttonSendToTCPServer);
+		btnSendToDCCP = (Button) findViewById(R.id.buttonSendToDCCPServer);
 		
 		
-		try {
-			AssetManager assetManager = getAssets();
-			InputStream dataSource = assetManager.open("ClientsFactory.zip");
-			StarCoreFactoryPath.Install(dataSource, "/data/data/"
-					+ getPackageName() + "/files", true);
-		} catch (Exception e) {
-			Log.e("Excption ClientSide OnCreate", e.getLocalizedMessage());
-		}
-		
-		
-		etServerIP=(EditText)findViewById(R.id.editTextServerIP);
-		btnConnectToServer=(Button)findViewById(R.id.buttonConnectToServer);
-		
-		
-		btnConnectToServer.setOnClickListener(new View.OnClickListener() {
-			
+		btnSendToUDP.setOnClickListener(new View.OnClickListener() {
+
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				
-				try {
 
-					serverIP=etServerIP.getText().toString();	
-					/*----init starcore----*/
-					StarCoreFactoryPath.StarCoreCoreLibraryPath = "/data/data/"
-							+ getPackageName() + "/lib";
-					StarCoreFactoryPath.StarCoreShareLibraryPath = "/data/data/"
-							+ getPackageName() + "/lib";
+				String result = dataSender.SendData(ClientSide.this, "UDP",
+						etServerIP.getText().toString(), "Large", 20000);
 
-					starcore = StarCoreFactory.GetFactory();
-					Service = starcore._InitSimple("test", "123", 0, 0);
-					SrvGroup = (StarSrvGroupClass) Service
-							._Get("_ServiceGroup");
-					SrvGroup._InitRaw("python", Service);
-
-					Service._DoFile("python", "/data/data/" + getPackageName()
-							+ "/files/ClientsFactory.py", "");
-					python = Service._ImportRawContext("python", "", false, "");
-
-				} catch (Exception e) {
-					Log.e("Error", e.getMessage());
-				}
-				String result = (String) python._Call("main","UDP",serverIP,"Large");
-
-			//	tvResult.setText("Selected Prtocol is " + result);
-				// SrvGroup._ClearService();
-				starcore._ModuleClear();
-
-				
+				Log.d("Result UDP", result);
 			}
 		});
-		
+
+		btnSendToTCP.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+
+				String result = dataSender.SendData(ClientSide.this, "TCP",
+						etServerIP.getText().toString(), "Large", 20001);
+
+				Log.d("Result TCP", result);
+			}
+		});
+
+		btnSendToDCCP.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+
+				String result = dataSender.SendData(ClientSide.this, "DCCP",
+						etServerIP.getText().toString(), "Large", 20002);
+
+				//Log.d("Result DCCP", result);
+			}
+		});
+
 	}
 
 	@Override

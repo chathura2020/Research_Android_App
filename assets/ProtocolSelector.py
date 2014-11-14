@@ -11,13 +11,14 @@ class ProtocolSelector:
   	RELIABLE=1
   	UNRELIABLE=2 #
   	HIGH_FREQUENCY=4
-  	LOW_FREQUENCY=8
-  	LARGE_DATA=16
-  	MEDIUM_DATA=32 #
-  	SMALL_DATA=64
-  	VERY_SMALL_DATA=128
-  	HIGH_PRIORITY=256
-  	LOW_PRIORITY=512
+  	TRIGGERED_FREQUENCY=8
+  	URGENT_FREQUENCY=16
+  	LARGE_DATA=32
+  	MEDIUM_DATA=64 #
+  	SMALL_DATA=128
+  	VERY_SMALL_DATA=256
+  	HIGH_PRIORITY=512
+  	LOW_PRIORITY=1024
   #End of required feature flags list
   
   	transport_features=0x0
@@ -63,9 +64,10 @@ class ProtocolSelector:
 	      
                         tcp_delay=float(self.protcol_data.getAverageDelay('TCP',packetSize))
                       	sctp_delay=float(self.protcol_data.getAverageDelay('SCTP',packetSize))
-	      
+
+                      
                       	#selecting based on throughput
-                      	if(tcp_throughput>sctp_throughput):
+                      	if(tcp_throughput>sctp_throughput and tcp_delay<sctp_delay):
                         	print 'TCP SELECTED'
                         	protocol='TCP'
                       	else:
@@ -96,9 +98,10 @@ class ProtocolSelector:
       
                         udp_delay=float(self.protcol_data.getAverageDelay('UDP',packetSize))
                         dccp_delay=float(self.protcol_data.getAverageDelay('DCCP',packetSize))
-      
+                        print 'UDP '+ str(udp_delay)
+                        print 'DCCP '+str(dccp_delay)
                       	#selecting based on throughput
-                      	if(dccp_throughput>udp_throughput):
+                      	if(dccp_throughput>udp_throughput and dccp_delay<udp_delay):
                                 print 'DCCP SELECTED'
                                 protocol='DCCP'
                         else:

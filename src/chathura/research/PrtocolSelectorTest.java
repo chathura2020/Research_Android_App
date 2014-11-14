@@ -31,18 +31,19 @@ public class PrtocolSelectorTest extends ActionBarActivity {
 	final int RELIABLE = 1;
 	final int UNRELIABLE = 2;
 	final int HIGH_FREQUENCY = 4;
-	final int LOW_FREQUENCY = 8;
-	final int LARGE_DATA = 16;
-	final int MEDIUM_DATA = 32;
-	final int SMALL_DATA = 64;
-	final int VERY_SMALL_DATA = 128;
-	final int HIGH_PRIORITY = 256;
-	final int LOW_PRIORITY = 512;
+	final int TRIGGERED_FREQUENCY = 8;
+	final int URGENT_FREQUENCY=16;
+	final int LARGE_DATA = 32;
+	final int MEDIUM_DATA = 64;
+	final int SMALL_DATA = 128;
+	final int VERY_SMALL_DATA = 256;
+	final int HIGH_PRIORITY = 512;
+	final int LOW_PRIORITY = 1024;
 
 	int feature_list = 0;
 
 	RadioButton rdbtnRelaible, rdbtnUnReliable, rdbtnLarge, rdbtnMedium,
-			rdbtnSmall, rdbtnVerySmall, rdbtnHighFreq, rdbtnLowFreq;
+			rdbtnSmall, rdbtnVerySmall, rdbtnHighFreq, rdbtnTriggredFreq,rdbtnUrgentFreq;
 	Button btnSelectProtocol;
 
 	StarObjectClass python = null;
@@ -52,13 +53,13 @@ public class PrtocolSelectorTest extends ActionBarActivity {
 
 	TextView tvResult;
 
-	
+	GlobalClass globalClass;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_prtocol_selector_test);
-
+		
 		rdbtnRelaible = (RadioButton) findViewById(R.id.radioButtonReliable);
 		rdbtnUnReliable = (RadioButton) findViewById(R.id.radioButtonUnReliable);
 		rdbtnLarge = (RadioButton) findViewById(R.id.radioButtonLarge);
@@ -66,10 +67,13 @@ public class PrtocolSelectorTest extends ActionBarActivity {
 		rdbtnSmall = (RadioButton) findViewById(R.id.radioButtonSmall);
 		rdbtnVerySmall = (RadioButton) findViewById(R.id.radioButtonVerySamll);
 		rdbtnHighFreq = (RadioButton) findViewById(R.id.radioButtonHighFreq);
-		rdbtnLowFreq = (RadioButton) findViewById(R.id.radioButtonLowFreq);
+		rdbtnTriggredFreq = (RadioButton) findViewById(R.id.radioButtonTriggredFreq);
+		rdbtnUrgentFreq = (RadioButton) findViewById(R.id.radioButtonUrgentFreq);
 		btnSelectProtocol = (Button) findViewById(R.id.buttonSelectProtocol);
 		tvResult = (TextView) findViewById(R.id.textViewResult);
-
+		
+		globalClass=GlobalClass.getInstance();
+		
 		try {
 			AssetManager assetManager = getAssets();
 			InputStream dataSource = assetManager.open("pycode.zip");
@@ -170,7 +174,7 @@ public class PrtocolSelectorTest extends ActionBarActivity {
 		});
 		
 		btnSelectProtocol.setOnClickListener(new View.OnClickListener() {
-
+			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
@@ -198,6 +202,7 @@ public class PrtocolSelectorTest extends ActionBarActivity {
 				String result = (String) python._Call("main", feature_list);
 
 				tvResult.setText("Selected Prtocol is " + result);
+				globalClass.setProtocol(result);
 				// SrvGroup._ClearService();
 				starcore._ModuleClear();
 
