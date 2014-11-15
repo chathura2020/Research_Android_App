@@ -7,9 +7,20 @@ public class GlobalClass {
 	 
 	 private  String  protocol;
 	 private String serverIP;
+	 public  int feature_list=0;
 	 
 	  
-	   public String getServerIP() {
+	   public int getFeature_list() {
+		return feature_list;
+	}
+
+
+	public void setFeature_list(int feature_list) {
+		this.feature_list = feature_list;
+	}
+
+
+	public String getServerIP() {
 		return serverIP;
 	}
 

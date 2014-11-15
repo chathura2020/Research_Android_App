@@ -45,8 +45,10 @@ public class MainActivity extends ActionBarActivity {
 		//txt = (TextView) findViewById(R.id.txt);
 		
 		Button btn1=(Button) findViewById(R.id.buttonAPISelection);
-		Button btn2=(Button) findViewById(R.id.buttonClient);
+		//Button btn2=(Button) findViewById(R.id.buttonClient);
 		Button btn3=(Button) findViewById(R.id.buttonServers);
+		Button btn4=(Button) findViewById(R.id.buttonAPIData);
+		
 		
 		btn1.setOnClickListener(new View.OnClickListener() {
 			
@@ -60,17 +62,17 @@ public class MainActivity extends ActionBarActivity {
 			}
 		});
 		
-	btn2.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				Intent i=new Intent(MainActivity.this,ClientSide.class);
-				startActivity(i);
-				
-				
-			}
-		});
+//	btn2.setOnClickListener(new View.OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View arg0) {
+//				// TODO Auto-generated method stub
+//				Intent i=new Intent(MainActivity.this,ClientSide.class);
+//				startActivity(i);
+//				
+//				
+//			}
+//		});
 		
 	
 	btn3.setOnClickListener(new View.OnClickListener() {
@@ -79,6 +81,18 @@ public class MainActivity extends ActionBarActivity {
 		public void onClick(View arg0) {
 			// TODO Auto-generated method stub
 			Intent i=new Intent(MainActivity.this,ServerSide.class);
+			startActivity(i);
+			
+			
+		}
+	});
+	
+	btn4.setOnClickListener(new View.OnClickListener() {
+		
+		@Override
+		public void onClick(View arg0) {
+			// TODO Auto-generated method stub
+			Intent i=new Intent(MainActivity.this,MainDataType.class);
 			startActivity(i);
 			
 			

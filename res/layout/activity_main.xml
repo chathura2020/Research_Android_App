@@ -23,16 +23,22 @@
         android:layout_height="wrap_content"
         android:text="Protocol Selection" />
 
-    <Button
+   <!--  <Button
         android:id="@+id/buttonClient"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Clients" />
-
+ -->
     <Button
         android:id="@+id/buttonServers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Servers" />
+
+    <Button
+        android:id="@+id/buttonAPIData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Data From API" />
 
 </LinearLayout>

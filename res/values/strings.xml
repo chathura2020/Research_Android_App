@@ -7,5 +7,7 @@
     <string name="title_activity_prtocol_selector_test">PrtocolSelectorTest</string>
     <string name="title_activity_client_side">ClientSide</string>
     <string name="title_activity_server_side">ServerSide</string>
+    <string name="title_activity_main_data_type">MainDataType</string>
+    <string name="title_activity_data_sender">DataSender</string>
 
 </resources>

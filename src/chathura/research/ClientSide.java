@@ -10,6 +10,7 @@ import com.srplab.www.starcore.StarSrvGroupClass;
 
 import android.app.Activity;
 import android.content.res.AssetManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -25,20 +26,26 @@ public class ClientSide extends Activity {
 
 	String serverIP = "0.0.0.0";
 
-	DataSender dataSender;
+	SocketManager dataSender;
+
+	
+	GlobalClass gloabClass;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_client_side);
 
-		dataSender = new DataSender();
+		dataSender = new SocketManager();
 		dataSender.LoadClients(this);
 
 		etServerIP = (EditText) findViewById(R.id.editTextServerIP);
 		btnSendToUDP = (Button) findViewById(R.id.buttonSendToUDPServer);
 		btnSendToTCP = (Button) findViewById(R.id.buttonSendToTCPServer);
 		btnSendToDCCP = (Button) findViewById(R.id.buttonSendToDCCPServer);
+		
+
+		gloabClass=GlobalClass.getInstance();
 		
 		
 		btnSendToUDP.setOnClickListener(new View.OnClickListener() {
@@ -47,10 +54,13 @@ public class ClientSide extends Activity {
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
 
-				String result = dataSender.SendData(ClientSide.this, "UDP",
-						etServerIP.getText().toString(), "Large", 20000);
-
-				Log.d("Result UDP", result);
+				
+				gloabClass.setServerIP(etServerIP.getText().toString());
+			//	new AsyncSendUDP().execute();
+//				String result = dataSender.SendData(ClientSide.this, "UDP",
+//						etServerIP.getText().toString(), "Large", 20000);
+//
+//				Log.d("Result UDP", result);
 			}
 		});
 
@@ -60,10 +70,15 @@ public class ClientSide extends Activity {
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
 
-				String result = dataSender.SendData(ClientSide.this, "TCP",
-						etServerIP.getText().toString(), "Large", 20001);
-
-				Log.d("Result TCP", result);
+//				tcpClient.setIpAddress("192.168.123.4");
+//				tcpClient.setPort(20001);
+//				
+				
+				
+//				String result = dataSender.SendData(ClientSide.this, "TCP",
+//						etServerIP.getText().toString(), "Large", 20001);
+//
+//				Log.d("Result TCP", result);
 			}
 		});
 
@@ -73,6 +88,8 @@ public class ClientSide extends Activity {
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
 
+				
+				
 				String result = dataSender.SendData(ClientSide.this, "DCCP",
 						etServerIP.getText().toString(), "Large", 20002);
 
@@ -82,6 +99,10 @@ public class ClientSide extends Activity {
 
 	}
 
+	
+
+
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

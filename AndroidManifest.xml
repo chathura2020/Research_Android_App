@@ -9,7 +9,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -40,6 +39,22 @@
         <activity
             android:name=".ServerSide"
             android:label="@string/title_activity_server_side" >
+        </activity>
+        <activity
+            android:name=".MainDataType"
+            android:label="@string/title_activity_main_data_type"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="chathura.research.MainActivity" />
+        </activity>
+        <activity
+            android:name=".DataSender"
+            android:label="@string/title_activity_data_sender"
+            android:parentActivityName=".MainDataType" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="chathura.research.MainDataType" />
         </activity>
     </application>
 
